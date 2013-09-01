@@ -10,7 +10,7 @@
 
 @class MapTestViewController;
 
-@interface MapTestAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MapTestAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

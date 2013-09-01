@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapKit/MapKit.h"
 
-@interface MapTestViewController : UIViewController
-
+@interface MapTestViewController : UIViewController<MKMapViewDelegate>{
+  
+}
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction)basemapChanged:(id)sender;
 @end
