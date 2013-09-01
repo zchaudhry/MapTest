@@ -113,7 +113,7 @@
   //Alert View to show description
   UIAlertView *message = [[UIAlertView alloc] initWithTitle:view.annotation.title
                                                     message:view.annotation.description
-                                                   delegate:nil
+                                                   delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
   [message show];
