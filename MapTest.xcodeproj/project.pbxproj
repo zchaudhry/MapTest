@@ -27,7 +27,6 @@
 		955CA30117D2953C0058D222 /* MyCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 955CA30017D2953C0058D222 /* MyCustomAnnotation.m */; };
 		955CA30317D295810058D222 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CA30217D295810058D222 /* MapKit.framework */; };
 		955CA30517D295890058D222 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CA30417D295890058D222 /* CoreLocation.framework */; };
-		9591D43017D688CC0072F057 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9591D42F17D688CC0072F057 /* Default@2x.png */; };
 		95C10EA017D2E34B000D16E6 /* iFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C10E9F17D2E34B000D16E6 /* iFire.png */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 		955CA30017D2953C0058D222 /* MyCustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnnotation.m; sourceTree = "<group>"; };
 		955CA30217D295810058D222 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		955CA30417D295890058D222 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9591D42F17D688CC0072F057 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		95C10E9F17D2E34B000D16E6 /* iFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iFire.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 		955CA2CD17D295200058D222 = {
 			isa = PBXGroup;
 			children = (
-				9591D42F17D688CC0072F057 /* Default@2x.png */,
 				950E1B3817D6774F00BB46B6 /* ipad_icon144x144.png */,
 				950E1B3617D6773D00BB46B6 /* ipad_icon_72x72.png */,
 				950E1B3417D676BC00BB46B6 /* iphone_icon_retina_114x114.png */,
@@ -208,7 +205,6 @@
 				950E1B3517D676BC00BB46B6 /* iphone_icon_retina_114x114.png in Resources */,
 				950E1B3717D6773D00BB46B6 /* ipad_icon_72x72.png in Resources */,
 				950E1B3917D6774F00BB46B6 /* ipad_icon144x144.png in Resources */,
-				9591D43017D688CC0072F057 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
