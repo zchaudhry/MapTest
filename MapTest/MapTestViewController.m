@@ -18,6 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [self.busyView startAnimating];
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
   //set delegate very important step for custom annotation markers to showup
   _mapView.delegate = self;
   MKCoordinateRegion region;
@@ -26,8 +28,11 @@
   region.span.longitudeDelta = 10.0f;
   region.span.latitudeDelta = 10.0f;
   [_mapView setRegion:region animated:YES];
-  
-  
+  [self loadData];
+    
+}
+// once map is loaded and zoom to desired area, call the load data....
+-(void)loadData{
   //get the MODIS DAta
   
   //0 -latitude,1- longitude,2- brightness,3- scan,4- track,
@@ -40,7 +45,7 @@
   NSString *strip2 = [strip1 stringByReplacingOccurrencesOfString:@"\r" withString:@""];
   NSArray *rows = [strip2 componentsSeparatedByString:@"\n"];
   NSArray *components;
-   CLLocationCoordinate2D coord;
+  CLLocationCoordinate2D coord;
   for(int i=0; i<[rows count]; i++){
     
     if(i==0 || [[rows objectAtIndex:i] isEqualToString:@""]){
@@ -64,7 +69,7 @@
     NSString *usedSatellite = [NSString stringWithFormat:@"Collected using %@ satellite", satellite];
     NSString *brightness = [NSString stringWithFormat:@"Brightness Temp: %@Kelvin", bright];
     NSString *fireRadiativePotential = [NSString stringWithFormat:@"Fire Radiative Potential: %@MW acquired on %@ at %@ with %@ %% Confidence using %@ satellite.", frp,[components  objectAtIndex:5],[components  objectAtIndex:6],conf, satellite];
-        
+    
     double lat = [latitude doubleValue];
     double lon = [longitude doubleValue];
     
@@ -76,19 +81,17 @@
     ann.subtitle = usedSatellite;
     ann.description= fireRadiativePotential;
     [_mapView addAnnotation:ann];
-    
+       
   }
-  
-  
-	// Do any additional setup after loading the view, typically from a nib.
-  
-  
-  
+
+ 
 }
+
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
   static NSString *annAddedIdentifier=@"annAddedIdentifier";
-  
+  [self.busyView stopAnimating];
+[UIApplication sharedApplication].networkActivityIndicatorVisible = false;
   if([annotation isKindOfClass:[MyCustomAnnotation class]]){
     //Try to get an unused annotation, similar to uitableviewcells
     MKAnnotationView *annotationView=[mapView dequeueReusableAnnotationViewWithIdentifier:annAddedIdentifier];
@@ -102,9 +105,11 @@
       annotationView.canShowCallout = YES;
       
     }
+    
     return annotationView;
   }
-  return nil;
+  
+    return nil;
 }
 // TODO: add custom callout
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
