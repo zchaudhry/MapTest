@@ -13,5 +13,7 @@
   
 }
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busyView;
 - (IBAction)basemapChanged:(id)sender;
+-(void)loadData;
 @end
