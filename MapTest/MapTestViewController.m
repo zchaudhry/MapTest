@@ -98,8 +98,7 @@
     ann.title = brightness;
     ann.subtitle = usedSatellite;
     ann.description= fireRadiativePotential;
-    [_mapView addAnnotation:ann];
-       
+    [_mapView addAnnotation:ann];       
   }
   }
  
