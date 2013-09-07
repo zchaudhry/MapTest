@@ -38,8 +38,26 @@
   //0 -latitude,1- longitude,2- brightness,3- scan,4- track,
   //5- acq_date,6- acq_time,7- satellite, 8- confidence,9- version,10- bright_t31,11- sfrp
   
-  
-  NSData *resData = [NSData  dataWithContentsOfURL:[NSURL URLWithString:@"http://firms.modaps.eosdis.nasa.gov/active_fire/text/USA_contiguous_and_Hawaii_24h.csv"]];
+  // error handling
+  NSError *error = nil;
+  NSData *resData = [NSData  dataWithContentsOfURL:[NSURL URLWithString:@"http://firms.modaps.eosdis.nasa.gov/active_fire/text/USA_contiguous_and_Hawaii_24h.csv"] options:NSDataReadingMappedAlways error:&error];
+ // Alert users if loading data from NASA failed
+  if (error != NULL) {
+    NSLog(@"%ul", resData.length);
+    [self.busyView stopAnimating];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    //Alert View to show Error
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                      message:@"Error Loading data from NASA, please try again later"
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    [message show];
+
+  }
+  else
+  {
+    
   NSString *csvString = [[NSString alloc] initWithData:resData encoding:NSUTF8StringEncoding];
   NSString *strip1 = [csvString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
   NSString *strip2 = [strip1 stringByReplacingOccurrencesOfString:@"\r" withString:@""];
@@ -83,7 +101,7 @@
     [_mapView addAnnotation:ann];
        
   }
-
+  }
  
 }
 
