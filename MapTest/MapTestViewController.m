@@ -8,12 +8,16 @@
 
 #import "MapTestViewController.h"
 #import "MyCustomAnnotation.h"
+#import "DetailViewController.h"
+#import "PopOverViewController.h"
+
 
 @interface MapTestViewController ()
 
 @end
 
 @implementation MapTestViewController
+
 
 - (void)viewDidLoad
 {
@@ -106,6 +110,7 @@
 
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+  
   static NSString *annAddedIdentifier=@"annAddedIdentifier";
   [self.busyView stopAnimating];
 [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
@@ -132,14 +137,35 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
   [mapView deselectAnnotation:view.annotation animated:YES];
-  //Alert View to show description
-  UIAlertView *message = [[UIAlertView alloc] initWithTitle:view.annotation.title
-                                                    message:view.annotation.description
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-  [message show];
   
+  
+  //Alert View to show description
+//  UIAlertView *message = [[UIAlertView alloc] initWithTitle:view.annotation.title
+                                   //                 message:view.annotation.description
+                                //                   delegate:self
+                              //            cancelButtonTitle:@"OK"
+                             //           otherButtonTitles:nil];
+  
+   //
+  DetailViewController *detailView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+  
+  detailView.titleText = view.annotation.title;
+  detailView.desciptionText = view.annotation.description;
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
+  [self presentViewController:detailView animated:YES completion:nil];
+  }else{
+    
+    PopOverViewController *popView =[[PopOverViewController alloc] initWithNibName:@"PopOverViewController" bundle:nil];
+    
+    popView.popOverTitleText =view.annotation.title;
+    popView.popOverdetailText = view.annotation.description;
+    _popOver =[[UIPopoverController alloc] initWithContentViewController:popView];
+    CGRect recSize = CGRectMake(10.0f, 10.0f, 1.0f, 1.0f);
+    [_popOver presentPopoverFromRect:recSize inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+    //[message show];
+  }
   
   }
 - (IBAction)basemapChanged:(id)sender{

@@ -33,6 +33,10 @@
 		95C10EA017D2E34B000D16E6 /* iFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C10E9F17D2E34B000D16E6 /* iFire.png */; };
 		95C402B617D6B37A00AA9EF6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C402B517D6B37A00AA9EF6 /* Default.png */; };
 		95C402BA17D6B4D400AA9EF6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C402B917D6B4D400AA9EF6 /* Default-568h@2x.png */; };
+		95D0B32817FE327100C529F2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D0B32617FE327100C529F2 /* DetailViewController.m */; };
+		95D0B32917FE327100C529F2 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D0B32717FE327100C529F2 /* DetailViewController.xib */; };
+		95D6D7BF17FF38EB00CCEAF6 /* PopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D6D7BC17FF38EB00CCEAF6 /* PopOverViewController.m */; };
+		95D6D7C017FF38EB00CCEAF6 /* PopOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D6D7BD17FF38EB00CCEAF6 /* PopOverViewController.xib */; };
 		95FE197D17FCEE4D00D5D42A /* iphone_icon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FE197C17FCEE4D00D5D42A /* iphone_icon120x120.png */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,12 @@
 		95C10E9F17D2E34B000D16E6 /* iFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iFire.png; sourceTree = "<group>"; };
 		95C402B517D6B37A00AA9EF6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		95C402B917D6B4D400AA9EF6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95D0B32517FE327100C529F2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		95D0B32617FE327100C529F2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		95D0B32717FE327100C529F2 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		95D6D7BB17FF38EB00CCEAF6 /* PopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopOverViewController.h; sourceTree = "<group>"; };
+		95D6D7BC17FF38EB00CCEAF6 /* PopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopOverViewController.m; sourceTree = "<group>"; };
+		95D6D7BD17FF38EB00CCEAF6 /* PopOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOverViewController.xib; sourceTree = "<group>"; };
 		95FE197C17FCEE4D00D5D42A /* iphone_icon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon120x120.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,11 +143,15 @@
 		955CA2DF17D295200058D222 /* MapTest */ = {
 			isa = PBXGroup;
 			children = (
+				95D6D7B917FF38CF00CCEAF6 /* Pop */,
 				95842B4F17FC94B8005C9798 /* MapTest.entitlements */,
 				955CA2E817D295200058D222 /* MapTestAppDelegate.h */,
-				955CA2E917D295200058D222 /* MapTestAppDelegate.m */,
 				955CA2F117D295200058D222 /* MapTestViewController.h */,
+				95D0B32517FE327100C529F2 /* DetailViewController.h */,
+				95D0B32617FE327100C529F2 /* DetailViewController.m */,
+				95D0B32717FE327100C529F2 /* DetailViewController.xib */,
 				955CA2F217D295200058D222 /* MapTestViewController.m */,
+				955CA2E917D295200058D222 /* MapTestAppDelegate.m */,
 				955CA2F417D295200058D222 /* MapTestViewController_iPhone.xib */,
 				955CA2F717D295200058D222 /* MapTestViewController_iPad.xib */,
 				95842B4D17FC9282005C9798 /* Images.xcassets */,
@@ -159,6 +173,16 @@
 				95C402B917D6B4D400AA9EF6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95D6D7B917FF38CF00CCEAF6 /* Pop */ = {
+			isa = PBXGroup;
+			children = (
+				95D6D7BB17FF38EB00CCEAF6 /* PopOverViewController.h */,
+				95D6D7BC17FF38EB00CCEAF6 /* PopOverViewController.m */,
+				95D6D7BD17FF38EB00CCEAF6 /* PopOverViewController.xib */,
+			);
+			name = Pop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D0B32917FE327100C529F2 /* DetailViewController.xib in Resources */,
 				95FE197D17FCEE4D00D5D42A /* iphone_icon120x120.png in Resources */,
 				955CA2E417D295200058D222 /* InfoPlist.strings in Resources */,
 				957B692917FCA4610017450E /* ipad_icon76x76.png in Resources */,
@@ -230,6 +255,7 @@
 				957B692217FC99D50017450E /* ipad_icon152x152.png in Resources */,
 				95842B4E17FC9282005C9798 /* Images.xcassets in Resources */,
 				957B692A17FCA4610017450E /* iphone_icon60x60.png in Resources */,
+				95D6D7C017FF38EB00CCEAF6 /* PopOverViewController.xib in Resources */,
 				957B692617FC9FF90017450E /* launchIphone@2x.png in Resources */,
 				95C10EA017D2E34B000D16E6 /* iFire.png in Resources */,
 				950E1B3117D6735800BB46B6 /* Default@2x~ipad.png in Resources */,
@@ -250,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D6D7BF17FF38EB00CCEAF6 /* PopOverViewController.m in Sources */,
+				95D0B32817FE327100C529F2 /* DetailViewController.m in Sources */,
 				955CA2E617D295200058D222 /* main.m in Sources */,
 				955CA2EA17D295200058D222 /* MapTestAppDelegate.m in Sources */,
 				955CA2F317D295200058D222 /* MapTestViewController.m in Sources */,
