@@ -40,6 +40,28 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
+                <navigationBar alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRL-Qw-fLV">
+                    <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <textAttributes key="titleTextAttributes">
+                        <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="MODIS " id="u1R-tE-RYs">
+                            <barButtonItem key="leftBarButtonItem" title="Show Location" id="cc4-Bv-7nU">
+                                <connections>
+                                    <action selector="zoomToLocation:" destination="-1" id="9CD-BO-y5P"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="About" id="3WM-h0-JV5">
+                                <connections>
+                                    <action selector="showAbout:" destination="-1" id="Iuv-i3-aJL"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -48,11 +70,14 @@
                 <constraint firstItem="46" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="51"/>
                 <constraint firstItem="52" firstAttribute="top" secondItem="6" secondAttribute="top" constant="233" id="53"/>
                 <constraint firstItem="52" firstAttribute="centerX" secondItem="46" secondAttribute="centerX" id="54"/>
+                <constraint firstItem="QRL-Qw-fLV" firstAttribute="top" secondItem="6" secondAttribute="top" constant="15" id="7EU-C0-JPd"/>
+                <constraint firstItem="QRL-Qw-fLV" firstAttribute="leading" secondItem="8" secondAttribute="leading" id="8Iy-zF-mej"/>
                 <constraint firstAttribute="bottom" secondItem="46" secondAttribute="bottom" id="CCh-Or-H3z"/>
                 <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="KYc-UN-0Fz"/>
                 <constraint firstItem="46" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="LBh-pQ-Ogx"/>
                 <constraint firstAttribute="trailing" secondItem="46" secondAttribute="trailing" id="VJs-Ul-AEn"/>
                 <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="Xt9-hF-oLQ"/>
+                <constraint firstItem="QRL-Qw-fLV" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="dYv-27-OjT"/>
                 <constraint firstItem="46" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="f47-oK-bRK"/>
                 <constraint firstItem="46" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="ibQ-7Y-NAI"/>
                 <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="nt3-d7-RTE"/>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoAboutViewController">
+            <connections>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBR-nJ-g9Q">
+                    <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="About " id="EeC-2G-M9N">
+                            <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="9tq-eT-6Hw">
+                                <connections>
+                                    <action selector="btnDonePressed:" destination="-1" id="PxU-ZC-xlM"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgJ-IN-uLJ">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Developed by Zahid Chaudhry" id="XMf-Ix-fV9"/>
+                    </items>
+                </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynk-qk-8bv">
+                    <rect key="frame" x="7" y="67" width="308" height="450"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" none="YES" link="YES" keyboardKey="YES"/>
+                    </accessibility>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">MODIS stands for MODerate Resolution Imaging Spectroradiometer. The MODIS instrument is on board NASA’s Earth Observing System (EOS) Terra (EOS AM) and Aqua (EOS PM) satellites. The orbit of the Terra satellite goes from north to south across the equator in the morning with a 10:30am and 10:30pm equatorial overpass and Aqua passes south to north over the equator in the afternoon with a 1:30pm and 1:30am equatorial overpass resulting in global coverage every 1 to 2 days. The EOS satellites have a ±55 degree scanning pattern and orbit at 705 km with a 2,330 km swath width. Source: </string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <font key="NSFont" size="13" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="18" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="https://earthdata.nasa.gov/data/near-real-time-data/faq/firms">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <font key="NSFont" size="13" name="Helvetica"/>
+                                <string key="NSLink">https://earthdata.nasa.gov/data/near-real-time-data/faq/firms</string>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="18" defaultTabInterval="36">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bgJ-IN-uLJ" firstAttribute="top" secondItem="Ynk-qk-8bv" secondAttribute="bottom" constant="7" id="42k-Eq-sm5"/>
+                <constraint firstItem="bgJ-IN-uLJ" firstAttribute="leading" secondItem="NBR-nJ-g9Q" secondAttribute="leading" id="4Ih-id-0Pd"/>
+                <constraint firstItem="Ynk-qk-8bv" firstAttribute="top" secondItem="NBR-nJ-g9Q" secondAttribute="bottom" constant="8" id="7ny-Ui-jiL"/>
+                <constraint firstItem="bgJ-IN-uLJ" firstAttribute="trailing" secondItem="NBR-nJ-g9Q" secondAttribute="trailing" id="BqF-Pg-byw"/>
+                <constraint firstItem="NBR-nJ-g9Q" firstAttribute="top" secondItem="1" secondAttribute="top" constant="15" id="KRN-qF-UfB"/>
+                <constraint firstAttribute="bottom" secondItem="bgJ-IN-uLJ" secondAttribute="bottom" id="QE4-x1-gO4"/>
+                <constraint firstAttribute="trailing" secondItem="Ynk-qk-8bv" secondAttribute="trailing" constant="5" id="aWq-c0-aCN"/>
+                <constraint firstItem="Ynk-qk-8bv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="7" id="duX-oL-bKr"/>
+                <constraint firstItem="NBR-nJ-g9Q" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ic2-4Q-d4Y"/>
+                <constraint firstAttribute="trailing" secondItem="NBR-nJ-g9Q" secondAttribute="trailing" id="mJN-Pl-6Qf"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

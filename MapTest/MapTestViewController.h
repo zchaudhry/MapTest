@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
-
-@interface MapTestViewController : UIViewController<MKMapViewDelegate>{
+#import "CoreLocation/CoreLocation.h"
+@interface MapTestViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>{
   
 }
 @property(nonatomic,retain)  UIPopoverController *popOver;
+@property (nonatomic, retain) CLLocation* initialLocation;
+@property (strong, nonatomic) IBOutlet UIButton *btnInfo;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction)showAbout:(id)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busyView;
 - (IBAction)basemapChanged:(id)sender;
+- (IBAction)zoomToLocation:(id)sender;
 -(void)loadData;
 @end

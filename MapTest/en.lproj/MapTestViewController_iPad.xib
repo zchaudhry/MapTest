@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
@@ -34,6 +34,24 @@
                         <action selector="basemapChanged:" destination="-1" eventType="valueChanged" id="30"/>
                     </connections>
                 </segmentedControl>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtA-hG-mnz">
+                    <rect key="frame" x="0.0" y="16" width="768" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="MODIS - Active Fire (24h)" id="OHw-AZ-Oeb">
+                            <barButtonItem key="leftBarButtonItem" title="Show Location" id="Xn7-Ad-pGf">
+                                <connections>
+                                    <action selector="zoomToLocation:" destination="-1" id="sZ8-D7-wXM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="About" style="done" id="qvU-Wm-Kgd">
+                                <connections>
+                                    <action selector="showAbout:" destination="-1" id="55O-H3-Ffg"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -43,6 +61,9 @@
                 <constraint firstItem="20" firstAttribute="trailing" secondItem="2" secondAttribute="trailing" id="24"/>
                 <constraint firstItem="25" firstAttribute="centerX" secondItem="20" secondAttribute="centerX" id="26"/>
                 <constraint firstAttribute="bottom" secondItem="25" secondAttribute="bottom" constant="20" symbolic="YES" id="27"/>
+                <constraint firstItem="YtA-hG-mnz" firstAttribute="leading" secondItem="20" secondAttribute="leading" id="UbN-Sk-2jL"/>
+                <constraint firstItem="YtA-hG-mnz" firstAttribute="trailing" secondItem="20" secondAttribute="trailing" id="fuR-lY-0l2"/>
+                <constraint firstItem="YtA-hG-mnz" firstAttribute="top" secondItem="2" secondAttribute="top" constant="16" id="qpq-3v-rPM"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
         </view>

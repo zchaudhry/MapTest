@@ -10,7 +10,7 @@
 #import "MyCustomAnnotation.h"
 #import "DetailViewController.h"
 #import "PopOverViewController.h"
-
+#import "InfoAboutViewController.h"
 
 @interface MapTestViewController ()
 
@@ -89,8 +89,13 @@
       satellite = @"Terra";
     }
     NSString *usedSatellite = [NSString stringWithFormat:@"Collected using %@ satellite", satellite];
-    NSString *brightness = [NSString stringWithFormat:@"Brightness Temp: %@Kelvin", bright];
-    NSString *fireRadiativePotential = [NSString stringWithFormat:@"Fire Radiative Potential: %@MW acquired on %@ at %@ with %@ %% Confidence using %@ satellite.", frp,[components  objectAtIndex:5],[components  objectAtIndex:6],conf, satellite];
+    NSString *brightness = [NSString stringWithFormat:@"Brightness Temp: %@ Kelvin", bright];
+    
+    
+    //0 -latitude,1- longitude,2- brightness,3- scan,4- track,
+    //5- acq_date,6- acq_time,7- satellite, 8- confidence,9- version,10- bright_t31,11- sfrp
+    
+    NSString *fireRadiativePotential = [NSString stringWithFormat:@"Fire Radiative Potential: %@ MW, along scan %@ pixel size  and track %@ pixel size, acquired on %@ at %@ (UTC) with %@ %% Confidence using %@ satellite. Collection and source version: %@", frp, [components objectAtIndex:3],[components objectAtIndex:4],[components  objectAtIndex:5],[components  objectAtIndex:6],conf, satellite, [components objectAtIndex:9]];
     
     double lat = [latitude doubleValue];
     double lon = [longitude doubleValue];
@@ -136,7 +141,7 @@
 // TODO: add custom callout
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-  [mapView deselectAnnotation:view.annotation animated:YES];
+  
   
   
   //Alert View to show description
@@ -153,6 +158,7 @@
   detailView.desciptionText = view.annotation.description;
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
+    [mapView deselectAnnotation:view.annotation animated:YES];
   [self presentViewController:detailView animated:YES completion:nil];
   }else{
     
@@ -161,8 +167,10 @@
     popView.popOverTitleText =view.annotation.title;
     popView.popOverdetailText = view.annotation.description;
     _popOver =[[UIPopoverController alloc] initWithContentViewController:popView];
-    CGRect recSize = CGRectMake(10.0f, 10.0f, 1.0f, 1.0f);
-    [_popOver presentPopoverFromRect:recSize inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+  //  CGRect recSize = CGRectMake(10.0f, 10.0f, 1.0f, 1.0f);
+    
+   UIButton *navButton = (UIButton *) control;
+    [_popOver presentPopoverFromRect:[navButton bounds] inView:navButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     
     //[message show];
   }
@@ -185,11 +193,60 @@
 
 }
 }
+
+- (IBAction)zoomToLocation:(id)sender {
+  if (self.mapView.showsUserLocation) {
+    self.mapView.showsUserLocation = false;
+    [sender setTitle:@"Show Location"];
+   //  [sender setAlpha:0.30f];
+  }else{
+    
+    self.mapView.showsUserLocation = true;
+    MKCoordinateRegion region;
+    region.center = _mapView.userLocation.coordinate;
+    region.span = MKCoordinateSpanMake(3.0, 3.0);
+    
+    region = [_mapView regionThatFits:region];
+    [_mapView setRegion:region animated:YES];
+    [sender setTitle:@"Hide Location"];
+  }
+}
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+  if ( !_initialLocation )
+  {
+    self.initialLocation = userLocation.location;
+    
+    MKCoordinateRegion region;
+    region.center = mapView.userLocation.coordinate;
+    region.span = MKCoordinateSpanMake(3.0, 3.0);
+    
+    region = [mapView regionThatFits:region];
+    [mapView setRegion:region animated:YES];
+  }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
   
 }
-
+// load different views for iphone and ipad for about information
+- (IBAction)showAbout:(id)sender {
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
+    InfoAboutViewController *infoView = [[InfoAboutViewController alloc]initWithNibName:@"InfoAboutViewController" bundle:Nil];
+    [self presentViewController:infoView animated:YES completion:Nil];
+  
+  } else{
+    // for IPAD
+    
+    InfoAboutViewController *infoViewForIpad =[[InfoAboutViewController alloc]initWithNibName:@"InfoAboutViewControllerIPad" bundle:Nil];
+    
+   infoViewForIpad.popover = [[UIPopoverController alloc] initWithContentViewController:infoViewForIpad];
+  //  CGRect recSize = CGRectMake(10.0f, 10.0f, 1.0f, 1.0f);
+  //  UIButton* btn = (UIButton *)sender;
+    [infoViewForIpad.popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+  
+  }
+}
 @end
