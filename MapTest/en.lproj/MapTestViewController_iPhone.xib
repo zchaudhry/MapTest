@@ -18,30 +18,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="332" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="540"/>
+                    <rect key="frame" x="0.0" y="48" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </mapView>
-                <segmentedControl contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="46">
-                    <rect key="frame" x="0.0" y="540" width="320" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    <segments>
-                        <segment title="Standard"/>
-                        <segment title="Satellite"/>
-                        <segment title="Hybrid"/>
-                    </segments>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <action selector="basemapChanged:" destination="-1" eventType="valueChanged" id="50"/>
-                    </connections>
-                </segmentedControl>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="52">
                     <rect key="frame" x="142" y="233" width="37" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
                 <navigationBar alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRL-Qw-fLV">
-                    <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="3" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <textAttributes key="titleTextAttributes">
@@ -62,26 +48,51 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
+                <navigationBar alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boc-qD-ZG6">
+                    <rect key="frame" x="0.0" y="528" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem id="KOO-eX-06p">
+                            <nil key="title"/>
+                            <barButtonItem key="leftBarButtonItem" style="done" id="kbw-0N-y2p">
+                                <segmentedControl key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="46">
+                                    <rect key="frame" x="16" y="7" width="232" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <segments>
+                                        <segment title="Standard"/>
+                                        <segment title="Satellite"/>
+                                        <segment title="Hybrid"/>
+                                    </segments>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="basemapChanged:" destination="-1" eventType="valueChanged" id="50"/>
+                                    </connections>
+                                </segmentedControl>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" systemItem="camera" id="kHU-oe-PA1">
+                                <connections>
+                                    <action selector="Print:" destination="-1" id="NQW-Xc-evp"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="46" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="47"/>
-                <constraint firstItem="46" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="48"/>
-                <constraint firstItem="46" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="51"/>
-                <constraint firstItem="52" firstAttribute="top" secondItem="6" secondAttribute="top" constant="233" id="53"/>
-                <constraint firstItem="52" firstAttribute="centerX" secondItem="46" secondAttribute="centerX" id="54"/>
-                <constraint firstItem="QRL-Qw-fLV" firstAttribute="top" secondItem="6" secondAttribute="top" constant="15" id="7EU-C0-JPd"/>
-                <constraint firstItem="QRL-Qw-fLV" firstAttribute="leading" secondItem="8" secondAttribute="leading" id="8Iy-zF-mej"/>
-                <constraint firstAttribute="bottom" secondItem="46" secondAttribute="bottom" id="CCh-Or-H3z"/>
-                <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="KYc-UN-0Fz"/>
-                <constraint firstItem="46" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="LBh-pQ-Ogx"/>
-                <constraint firstAttribute="trailing" secondItem="46" secondAttribute="trailing" id="VJs-Ul-AEn"/>
-                <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="Xt9-hF-oLQ"/>
-                <constraint firstItem="QRL-Qw-fLV" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="dYv-27-OjT"/>
-                <constraint firstItem="46" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="f47-oK-bRK"/>
-                <constraint firstItem="46" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="ibQ-7Y-NAI"/>
-                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="nt3-d7-RTE"/>
-                <constraint firstItem="46" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="rtp-7o-JmH"/>
+                <constraint firstAttribute="bottom" secondItem="boc-qD-ZG6" secondAttribute="bottom" constant="-4" id="9vx-5t-fOY"/>
+                <constraint firstItem="52" firstAttribute="centerX" secondItem="QRL-Qw-fLV" secondAttribute="centerX" id="KNS-HX-Po4"/>
+                <constraint firstItem="8" firstAttribute="top" secondItem="QRL-Qw-fLV" secondAttribute="bottom" constant="1" id="LAf-Of-Paj"/>
+                <constraint firstItem="boc-qD-ZG6" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="PUr-fj-ydC"/>
+                <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="Txc-s7-Ixe"/>
+                <constraint firstItem="boc-qD-ZG6" firstAttribute="trailing" secondItem="QRL-Qw-fLV" secondAttribute="trailing" id="Uph-2t-L8u"/>
+                <constraint firstItem="boc-qD-ZG6" firstAttribute="leading" secondItem="8" secondAttribute="leading" id="VSI-iW-MzK"/>
+                <constraint firstItem="boc-qD-ZG6" firstAttribute="top" secondItem="8" secondAttribute="bottom" id="ZPP-Yp-dfV"/>
+                <constraint firstItem="QRL-Qw-fLV" firstAttribute="top" secondItem="6" secondAttribute="top" constant="3" id="ZqF-fi-ABQ"/>
+                <constraint firstItem="52" firstAttribute="top" secondItem="6" secondAttribute="top" constant="233" id="eeu-9e-jh6"/>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="gxq-j6-ZeM"/>
+                <constraint firstItem="boc-qD-ZG6" firstAttribute="leading" secondItem="QRL-Qw-fLV" secondAttribute="leading" id="tYr-Db-bfk"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950984CA180504E700F00D34 /* gpsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 950984C9180504E700F00D34 /* gpsIcon.png */; };
 		950E1B3117D6735800BB46B6 /* Default@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 950E1B3017D6735800BB46B6 /* Default@2x~ipad.png */; };
 		950E1B3317D676B300BB46B6 /* iphone_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 950E1B3217D676B300BB46B6 /* iphone_icon_57x57.png */; };
 		950E1B3517D676BC00BB46B6 /* iphone_icon_retina_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 950E1B3417D676BC00BB46B6 /* iphone_icon_retina_114x114.png */; };
@@ -25,7 +24,6 @@
 		955CA30117D2953C0058D222 /* MyCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 955CA30017D2953C0058D222 /* MyCustomAnnotation.m */; };
 		955CA30317D295810058D222 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CA30217D295810058D222 /* MapKit.framework */; };
 		955CA30517D295890058D222 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CA30417D295890058D222 /* CoreLocation.framework */; };
-		956998BA1804F457006503B9 /* iconGPS.png in Resources */ = {isa = PBXBuildFile; fileRef = 956998B91804F457006503B9 /* iconGPS.png */; };
 		957B692217FC99D50017450E /* ipad_icon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 957B692117FC99D50017450E /* ipad_icon152x152.png */; };
 		957B692417FC9D090017450E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 957B692317FC9D090017450E /* Default@2x.png */; };
 		957B692617FC9FF90017450E /* launchIphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 957B692517FC9FF90017450E /* launchIphone@2x.png */; };
@@ -46,7 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		950984C9180504E700F00D34 /* gpsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gpsIcon.png; sourceTree = "<group>"; };
 		950E1B3017D6735800BB46B6 /* Default@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~ipad.png"; sourceTree = "<group>"; };
 		950E1B3217D676B300BB46B6 /* iphone_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon_57x57.png; sourceTree = "<group>"; };
 		950E1B3417D676BC00BB46B6 /* iphone_icon_retina_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_icon_retina_114x114.png; sourceTree = "<group>"; };
@@ -70,7 +67,6 @@
 		955CA30017D2953C0058D222 /* MyCustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnnotation.m; sourceTree = "<group>"; };
 		955CA30217D295810058D222 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		955CA30417D295890058D222 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		956998B91804F457006503B9 /* iconGPS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconGPS.png; sourceTree = "<group>"; };
 		957B692117FC99D50017450E /* ipad_icon152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipad_icon152x152.png; sourceTree = "<group>"; };
 		957B692317FC9D090017450E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		957B692517FC9FF90017450E /* launchIphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchIphone@2x.png"; sourceTree = "<group>"; };
@@ -176,8 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				95C10E9F17D2E34B000D16E6 /* iFire.png */,
-				950984C9180504E700F00D34 /* gpsIcon.png */,
-				956998B91804F457006503B9 /* iconGPS.png */,
 				955CA2E117D295200058D222 /* MapTest-Info.plist */,
 				955CA2E217D295200058D222 /* InfoPlist.strings */,
 				955CA2E517D295200058D222 /* main.m */,
@@ -271,7 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956998BA1804F457006503B9 /* iconGPS.png in Resources */,
 				95D0B32917FE327100C529F2 /* DetailViewController.xib in Resources */,
 				95FE197D17FCEE4D00D5D42A /* iphone_icon120x120.png in Resources */,
 				955CA2E417D295200058D222 /* InfoPlist.strings in Resources */,
@@ -280,7 +273,6 @@
 				955CA2F917D295200058D222 /* MapTestViewController_iPad.xib in Resources */,
 				957B692217FC99D50017450E /* ipad_icon152x152.png in Resources */,
 				95842B4E17FC9282005C9798 /* Images.xcassets in Resources */,
-				950984CA180504E700F00D34 /* gpsIcon.png in Resources */,
 				957B692A17FCA4610017450E /* iphone_icon60x60.png in Resources */,
 				95D6D7C017FF38EB00CCEAF6 /* PopOverViewController.xib in Resources */,
 				957B692617FC9FF90017450E /* launchIphone@2x.png in Resources */,

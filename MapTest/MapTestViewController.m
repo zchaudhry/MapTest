@@ -211,6 +211,14 @@
     [sender setTitle:@"Hide Location"];
   }
 }
+// get a screen capture
+- (IBAction)Print:(id)sender {
+  UIGraphicsBeginImageContext(self.mapView.frame.size);
+  [self.mapView.layer renderInContext:UIGraphicsGetCurrentContext()];
+  UIImage *viewimage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  UIImageWriteToSavedPhotosAlbum(viewimage, nil, Nil, nil);
+}
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
   if ( !_initialLocation )

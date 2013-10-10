@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busyView;
 - (IBAction)basemapChanged:(id)sender;
 - (IBAction)zoomToLocation:(id)sender;
+- (IBAction)Print:(id)sender;
 -(void)loadData;
 @end
